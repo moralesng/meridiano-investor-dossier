@@ -59,7 +59,7 @@ p{margin-bottom:14px}
 .dark{background:var(--azul);color:var(--crema)}
 .dark h2{color:var(--crema)} .dark h3{color:var(--laton)} .dark .lead{color:rgba(247,244,238,.75)} .dark p{color:rgba(247,244,238,.85)}
 .green{background:var(--verde);color:var(--crema)}
-.green h2{color:var(--crema)} .green h3{color:var(--laton)} .green .lead,.green p,.green li{color:rgba(247,244,238,.94)}
+.green h2{color:var(--crema)} .green h3{color:var(--laton)} .green .lead,.green p{color:rgba(247,244,238,.85)}
 /* ---------- COMPONENTS ---------- */
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:26px}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
@@ -83,7 +83,7 @@ tr:nth-child(even) td{background:#faf7f1}
 td.num,th.num{text-align:right;font-family:'JetBrains Mono',monospace;font-size:12.5px;white-space:nowrap}
 .total td{background:var(--crema-2)!important;font-weight:700;border-top:2px solid var(--laton)}
 .dark table{background:rgba(255,255,255,.04)}
-.dark td{border-color:rgba(255,255,255,.18);color:rgba(247,244,238,.95)}
+.dark td{border-color:rgba(255,255,255,.12);color:rgba(247,244,238,.88)}
 .dark tr:nth-child(even) td{background:rgba(255,255,255,.03)}
 .note{background:var(--crema-2);border-left:3px solid var(--laton);padding:14px 18px;font-size:13.5px;color:#4a4438;margin:18px 0;border-radius:0 12px 12px 0}
 .warn{border-left-color:var(--terra)}
@@ -133,51 +133,7 @@ footer a{color:var(--laton)}
 .visual-card img{width:100%;height:100%;object-fit:cover;transition:transform 500ms var(--ease-out)}
 .visual-card figcaption{position:absolute;inset:auto 0 0;padding:76px 24px 22px;color:#fff;background:linear-gradient(transparent,rgba(0,36,71,.92))}
 .visual-card b{display:block;font-family:'Playfair Display',serif;font-size:20px}
-.visual-card small{color:rgba(255,255,255,.88)}
-.dark li,
-.dark .src,
-.dark .note,
-.green .src,
-.green .note{
-  color:rgba(247,244,238,.92);
-}
-.dark .total td,
-.green .total td{
-  background:#efe4d2 !important;
-  color:#10233c !important;
-  border-top:2px solid var(--laton);
-  font-weight:800;
-}
-.dark .total td *,
-.green .total td *{
-  color:#10233c !important;
-}
-.green table td,
-.green table th,
-.green table td *,
-.green table th *{
-  color:rgba(247,244,238,.96);
-}
-.green table .total td,
-.green table .total td *{
-  color:#10233c !important;
-}
-.green .note .tag,
-.dark .note .tag{
-  color:#fff !important;
-}
-.green .card p,
-.green .step p,
-.green .bar-row .lbl{
-  color:rgba(247,244,238,.92);
-}
-.green .bar-val,
-.dark .bar-val{
-  color:#f3d19d;
-}
-.readability-fix{
-  color:inherit;
-}
+.visual-card small{color:rgba(255,255,255,.68)}
 .equipment-proof{display:grid;grid-template-columns:1.35fr .65fr;gap:14px;margin:22px 0}
 .equipment-item{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;min-height:250px;margin:0;overflow:hidden;border:1px solid #e3dac9;border-radius:18px;background:#fff;box-shadow:0 14px 40px rgba(0,36,71,.08)}
 .equipment-item img{width:100%;height:250px;object-fit:contain;padding:18px;background:linear-gradient(145deg,#fff,#f3efe7)}
@@ -228,6 +184,21 @@ footer a{color:var(--laton)}
 @media print{nav{position:static}section{padding:34px 0;page-break-inside:avoid}.hero{padding:50px 0}body{font-size:12px}}
 </style>
 <link rel="stylesheet" href="modelo-negocio-meridiano-v1.2.css">
+<style id="contrast-and-asset-fixes">
+/* Correcciones quirúrgicas: solo color y ubicación de imágenes; no cambian la maquetación. */
+.hero::before{
+  background-image:
+    linear-gradient(90deg,var(--color-primary-strong),rgba(0,26,51,.12) 62%),
+    linear-gradient(0deg,rgba(0,26,51,.66),rgba(0,26,51,.12)),
+    url('hero-granos.jpg');
+}
+.green .card h4{color:var(--crema)}
+.green .card p{color:rgba(247,244,238,.96)}
+.green table td{color:var(--ink)}
+.dark table .total td,
+.green table .total td{color:var(--ink)}
+#gtm h3{color:#e4c493}
+</style>
 </head>
 <body>
 
