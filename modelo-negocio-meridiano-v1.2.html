@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Plan de negocio por fases para MERIDIANO, hub de tueste y experiencia de café venezolano de especialidad en A Coruña.">
+<meta name="theme-color" content="#002447">
+<title>MERIDIANO · Dossier Maestro de Inversión · v1.2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --azul:#002447; --verde:#1C3F34; --crema:#F7F4EE; --laton:#B08A57; --terra:#9E5A3C;
+  --azul-90:#0A3159; --crema-2:#EFEAE0; --ink:#1d2530; --gris:#5a6472;
+  --ease-out:cubic-bezier(.23,1,.32,1); --ease-in-out:cubic-bezier(.77,0,.175,1);
+  --sombra:0 24px 70px rgba(0,36,71,.13);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;background:radial-gradient(circle at 92% 5%,rgba(176,138,87,.10),transparent 24%),var(--crema);color:var(--ink);font-size:15.5px;line-height:1.65;overflow-x:hidden}
+button,select,input{font:inherit}
+button,select{cursor:pointer}
+h1,h2,h3,.serif{font-family:'Playfair Display',serif}
+.mono{font-family:'JetBrains Mono',monospace}
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px}
+section{padding:72px 0}
+/* ---------- NAV ---------- */
+nav{position:sticky;top:0;z-index:50;background:rgba(0,36,71,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(176,138,87,.35)}
+nav .wrap{display:flex;align-items:center;gap:22px;height:58px}
+nav a{color:var(--crema);text-decoration:none;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;opacity:.85}
+nav a:hover{color:var(--laton);opacity:1}
+nav .brand{font-family:'Playfair Display',serif;font-size:17px;letter-spacing:.2em;color:var(--laton);font-weight:700;margin-right:auto}
+.reading-progress{position:absolute;left:0;bottom:-1px;width:100%;height:2px;background:linear-gradient(90deg,var(--laton),var(--terra));transform:scaleX(0);transform-origin:left;transition:transform 120ms linear}
+.nav-select{display:none;max-width:170px;border:1px solid rgba(247,244,238,.25);border-radius:999px;padding:8px 30px 8px 12px;color:var(--crema);background:var(--azul);font-size:11px}
+.print-button{border:1px solid rgba(247,244,238,.28);border-radius:999px;padding:8px 12px;color:var(--crema);background:transparent;font-size:10px;letter-spacing:.08em;text-transform:uppercase;transition:transform 140ms var(--ease-out),background-color 180ms ease}
+.print-button:active{transform:scale(.97)}
+/* ---------- HERO ---------- */
+.hero{background:linear-gradient(160deg,var(--azul) 0%,#01315e 55%,var(--verde) 130%);color:var(--crema);padding:90px 0 80px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0 0 0 52%;background:linear-gradient(90deg,var(--azul),transparent 45%),linear-gradient(0deg,rgba(0,36,71,.72),rgba(0,36,71,.15)),url('modelo-negocio-cafe-lujo-assets/hero-granos.jpg') center/cover;opacity:.48}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 78% 18%,rgba(176,138,87,.18),transparent 55%)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--laton);margin-bottom:18px}
+.hero h1{font-size:64px;line-height:1.02;font-weight:900;letter-spacing:.04em}
+.hero h1 span{color:var(--laton)}
+.hero .lema{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:rgba(247,244,238,.85);margin:22px 0 8px}
+.hero .sub{font-size:14px;color:rgba(247,244,238,.7);max-width:560px}
+.hero .meta{margin-top:30px;display:flex;gap:26px;flex-wrap:wrap}
+.hero .meta div{border-left:2px solid var(--laton);padding-left:12px}
+.hero .meta b{display:block;font-family:'JetBrains Mono',monospace;font-size:15px;color:#fff}
+.hero .meta small{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,244,238,.6)}
+.logo-box{display:flex;justify-content:center;padding:18px;border:1px solid rgba(176,138,87,.28);border-radius:180px 180px 20px 20px;background:rgba(0,36,71,.54);backdrop-filter:blur(10px);box-shadow:0 30px 80px rgba(0,0,0,.2)}
+/* ---------- HEADINGS ---------- */
+.sec-kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--terra);margin-bottom:10px}
+h2{font-size:36px;color:var(--azul);font-weight:700;line-height:1.15;margin-bottom:14px}
+h3{font-size:21px;color:var(--verde);margin:34px 0 12px;font-weight:700}
+.lead{font-size:17px;color:var(--gris);max-width:820px;margin-bottom:26px}
+p{margin-bottom:14px}
+.dark{background:var(--azul);color:var(--crema)}
+.dark h2{color:var(--crema)} .dark h3{color:var(--laton)} .dark .lead{color:rgba(247,244,238,.75)} .dark p{color:rgba(247,244,238,.85)}
+.green{background:var(--verde);color:var(--crema)}
+.green h2{color:var(--crema)} .green h3{color:var(--laton)} .green .lead,.green p{color:rgba(247,244,238,.85)}
+/* ---------- COMPONENTS ---------- */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:#fff;border:1px solid #e4ddcf;border-top:3px solid var(--laton);padding:24px;border-radius:16px;box-shadow:0 12px 34px rgba(0,36,71,.06)}
+.card h4{font-family:'Playfair Display',serif;font-size:17px;color:var(--azul);margin-bottom:8px}
+.card p{font-size:13.5px;color:var(--gris);margin:0}
+.dark .card{background:rgba(255,255,255,.05);border-color:rgba(176,138,87,.3)}
+.dark .card h4{color:var(--laton)} .dark .card p{color:rgba(247,244,238,.75)}
+.kpi{background:#fff;border:1px solid #e4ddcf;padding:20px 22px;border-radius:14px;text-align:left}
+.kpi b{display:block;font-family:'JetBrains Mono',monospace;font-size:26px;color:var(--azul);font-weight:700}
+.kpi small{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gris)}
+.tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.08em;padding:2px 8px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.t-hecho{background:var(--verde);color:#fff}
+.t-supuesto{background:var(--laton);color:#fff}
+.t-condicion{background:var(--terra);color:#fff}
+table{width:100%;border-collapse:collapse;margin:18px 0 26px;background:#fff;font-size:13.5px}
+th{background:var(--azul);color:var(--crema);text-align:left;padding:10px 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+td{padding:9px 12px;border-bottom:1px solid #eae4d7;vertical-align:top}
+tr:nth-child(even) td{background:#faf7f1}
+td.num,th.num{text-align:right;font-family:'JetBrains Mono',monospace;font-size:12.5px;white-space:nowrap}
+.total td{background:var(--crema-2)!important;font-weight:700;border-top:2px solid var(--laton)}
+.dark table{background:rgba(255,255,255,.04)}
+.dark td{border-color:rgba(255,255,255,.12);color:rgba(247,244,238,.88)}
+.dark tr:nth-child(even) td{background:rgba(255,255,255,.03)}
+.note{background:var(--crema-2);border-left:3px solid var(--laton);padding:14px 18px;font-size:13.5px;color:#4a4438;margin:18px 0;border-radius:0 12px 12px 0}
+.warn{border-left-color:var(--terra)}
+/* bars */
+.bar-row{display:grid;grid-template-columns:190px 1fr 92px;align-items:center;gap:12px;margin-bottom:10px;font-size:12.5px}
+.bar-row .lbl{text-align:right;color:var(--gris);font-weight:500}
+.bar-track{background:#e8e1d2;border-radius:2px;height:20px;position:relative;overflow:hidden}
+.bar-fill{height:100%;border-radius:2px}
+.bar-val{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--azul);font-weight:700}
+.dark .bar-track{background:rgba(255,255,255,.12)}
+.dark .bar-row .lbl{color:rgba(247,244,238,.7)} .dark .bar-val{color:var(--laton)}
+/* donut */
+.donut-flex{display:flex;gap:36px;align-items:center;flex-wrap:wrap;margin:20px 0}
+.donut{width:190px;height:190px;border-radius:50%;background:conic-gradient(var(--azul) 0 38%,var(--verde) 38% 68%,var(--laton) 68% 86%,var(--terra) 86% 96%,#7d8a99 96% 100%);position:relative;flex-shrink:0}
+.donut::after{content:"";position:absolute;inset:44px;background:var(--crema);border-radius:50%}
+.legend{font-size:13px}
+.legend div{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+.legend i{width:13px;height:13px;border-radius:2px;display:inline-block}
+/* steps */
+.steps{counter-reset:st;margin:22px 0}
+.step{display:grid;grid-template-columns:52px 1fr;gap:18px;margin-bottom:20px}
+.step::before{counter-increment:st;content:counter(st,decimal-leading-zero);font-family:'JetBrains Mono',monospace;font-size:22px;color:var(--laton);font-weight:700;border-top:2px solid var(--laton);padding-top:6px}
+.step h4{font-family:'Playfair Display',serif;font-size:17px;color:var(--azul);margin-bottom:5px}
+.step p{font-size:13.5px;color:var(--gris);margin:0}
+.dark .step h4{color:var(--crema)} .dark .step p{color:rgba(247,244,238,.72)}
+/* option cards */
+.opt{background:#fff;border:1px solid #e4ddcf;border-radius:16px;padding:26px;position:relative}
+.opt.reco{border:2px solid var(--laton);box-shadow:0 8px 30px rgba(0,36,71,.10)}
+.opt .badge{position:absolute;top:-12px;right:18px;background:var(--laton);color:#fff;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;padding:4px 12px;text-transform:uppercase;border-radius:999px}
+.opt h4{font-family:'Playfair Display',serif;font-size:19px;color:var(--azul);margin-bottom:4px}
+.opt .sub{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;font-weight:600}
+.opt ul{list-style:none;font-size:13px;color:var(--gris)}
+.opt li{padding:6px 0;border-bottom:1px dashed #e4ddcf;display:flex;justify-content:space-between;gap:10px}
+.opt li b{font-family:'JetBrains Mono',monospace;color:var(--azul);white-space:nowrap}
+footer{background:var(--azul);color:rgba(247,244,238,.6);padding:44px 0;font-size:12px}
+footer a{color:var(--laton)}
+.src{font-size:12px;color:var(--gris);line-height:1.9}
+.src a{color:var(--terra)}
+.t-diligence{background:#6f5b91;color:#fff}
+.review-strip{display:grid;grid-template-columns:1.15fr repeat(3,.7fr);gap:1px;margin-top:-1px;background:rgba(176,138,87,.26);border-top:1px solid rgba(176,138,87,.26);border-bottom:1px solid rgba(176,138,87,.26)}
+.review-strip>div{padding:20px 24px;background:var(--azul);color:var(--crema)}
+.review-strip strong{display:block;font-family:'JetBrains Mono',monospace;color:var(--laton);font-size:18px}
+.review-strip span{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(247,244,238,.6)}
+.review-strip .decision strong{font-family:'Playfair Display',serif;font-size:20px;color:var(--crema)}
+.visual-proof{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0}
+.visual-card{min-height:360px;position:relative;overflow:hidden;border-radius:20px;box-shadow:var(--sombra)}
+.visual-card img{width:100%;height:100%;object-fit:cover;transition:transform 500ms var(--ease-out)}
+.visual-card figcaption{position:absolute;inset:auto 0 0;padding:76px 24px 22px;color:#fff;background:linear-gradient(transparent,rgba(0,36,71,.92))}
+.visual-card b{display:block;font-family:'Playfair Display',serif;font-size:20px}
+.visual-card small{color:rgba(255,255,255,.68)}
+.equipment-proof{display:grid;grid-template-columns:1.35fr .65fr;gap:14px;margin:22px 0}
+.equipment-item{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;min-height:250px;margin:0;overflow:hidden;border:1px solid #e3dac9;border-radius:18px;background:#fff;box-shadow:0 14px 40px rgba(0,36,71,.08)}
+.equipment-item img{width:100%;height:250px;object-fit:contain;padding:18px;background:linear-gradient(145deg,#fff,#f3efe7)}
+.equipment-item figcaption{padding:22px}
+.equipment-item span{display:block;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--terra);margin-bottom:8px}
+.equipment-item b{display:block;font-family:'Playfair Display',serif;font-size:19px;color:var(--azul);line-height:1.2}
+.equipment-item small{display:block;margin-top:8px;color:var(--gris);line-height:1.5}
+.equipment-item.compact{grid-template-columns:1fr}.equipment-item.compact img{height:170px}.equipment-item.compact figcaption{padding-top:10px}
+.source-caveat{padding:16px 18px;border:1px solid rgba(111,91,145,.28);border-radius:12px;background:rgba(111,91,145,.08);font-size:12.5px;color:#514565}
+.source-caveat b{color:#4e3b6d}
+.detail-panel{margin:24px 0;border:1px solid rgba(176,138,87,.34);border-radius:16px;background:rgba(255,255,255,.04);overflow:hidden}
+.detail-panel summary{padding:18px 22px;color:var(--laton);font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;list-style:none;cursor:pointer}
+.detail-panel summary::-webkit-details-marker{display:none}
+.detail-panel summary::after{content:'+';float:right;font-size:18px;line-height:1}
+.detail-panel[open] summary::after{content:'−'}
+.detail-content{padding:0 22px 18px}
+.simulator{margin:28px 0;padding:28px;border:1px solid #ddd3c2;border-radius:20px;background:#fff;box-shadow:var(--sombra)}
+.sim-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}
+.control label{display:flex;justify-content:space-between;gap:12px;margin-bottom:8px;color:var(--gris);font-size:12px}
+.control output{color:var(--azul);font-family:'JetBrains Mono',monospace;font-weight:700}
+.control input[type=range]{width:100%;accent-color:var(--terra)}
+.mode-switch{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.mode-switch button{border:1px solid #d9cfbd;border-radius:999px;padding:8px 12px;background:var(--crema);color:var(--azul);font-size:11px;transition:transform 140ms var(--ease-out),background-color 180ms ease,color 180ms ease}
+.mode-switch button[aria-pressed=true]{background:var(--azul);color:var(--crema);border-color:var(--azul)}
+.mode-switch button:active{transform:scale(.97)}
+.sim-results{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+.sim-results div{padding:16px;border-radius:12px;background:var(--crema-2)}
+.sim-results b{display:block;font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--azul)}
+.sim-results small{font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--gris)}
+.sim-status{margin-top:14px;padding:12px 14px;border-left:3px solid var(--laton);background:#f5f0e7;font-size:12.5px}
+.sim-status[data-tone="good"]{border-left-color:#2e6d51;background:#edf5f0;color:#245440}
+.sim-status[data-tone="warn"]{border-left-color:var(--laton);background:#f5f0e7;color:#5d4930}
+.sim-status[data-tone="bad"]{border-left-color:var(--terra);background:#f8ece8;color:#743e2e}
+.decision-section{background:linear-gradient(145deg,#f2ece0 0%,#fff 52%,#edf1ed 100%)}
+.decision-columns{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:28px}
+.decision-column{padding:26px;border:1px solid #ded5c5;border-radius:18px;background:rgba(255,255,255,.82);box-shadow:0 16px 45px rgba(0,36,71,.08)}
+.decision-column h3{margin:0 0 18px}
+.decision-item{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:14px 0;border-top:1px solid #e7dfd2}
+.decision-item:first-of-type{border-top:0;padding-top:0}
+.decision-item>span{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--azul);color:var(--laton);font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700}
+.decision-item b{display:block;color:var(--azul);margin-bottom:3px}.decision-item p{margin:0;font-size:12.8px;color:var(--gris)}
+.verdict-panel{margin-top:24px;padding:28px;border-radius:18px;background:var(--azul);color:var(--crema);border-left:5px solid var(--laton)}
+.verdict-panel strong{display:block;font-family:'Playfair Display',serif;font-size:28px;line-height:1.1;color:var(--laton);margin-bottom:10px}.verdict-panel p{margin:0;color:rgba(247,244,238,.8)}
+@media(hover:hover) and (pointer:fine){.visual-card:hover img{transform:scale(1.025)}.print-button:hover{background:rgba(255,255,255,.08)}}
+@media(max-width:860px){.hero .wrap,.grid2,.grid3,.grid4,.visual-proof,.sim-grid,.equipment-proof,.decision-columns{grid-template-columns:1fr}.hero h1{font-size:42px}.hero::before{inset:0;opacity:.18}nav a:not(.brand){display:none}.nav-select{display:block}.print-button{display:none}.review-strip{grid-template-columns:1fr 1fr}.grid4[style]{grid-template-columns:1fr!important}.bar-row{grid-template-columns:1fr 68px}.bar-row .lbl{text-align:left;grid-column:1/-1}.sim-results{grid-template-columns:1fr}table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}th,td{min-width:120px}.logo-box{max-width:330px;margin:0 auto}.equipment-item.compact{grid-template-columns:1.15fr .85fr}.equipment-item.compact img{height:250px}.equipment-item.compact figcaption{padding:22px}}
+@media(max-width:520px){.wrap{padding:0 20px}section{padding:58px 0}.review-strip{grid-template-columns:1fr}.hero{padding:64px 0}.hero .meta{gap:14px}.hero .meta div{width:calc(50% - 7px)}.donut{width:160px;height:160px}.donut::after{inset:38px}.detail-content{padding:0 12px 12px}.equipment-item,.equipment-item.compact{grid-template-columns:1fr}.equipment-item img,.equipment-item.compact img{height:190px}.equipment-item figcaption,.equipment-item.compact figcaption{padding:18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.visual-card img,.reading-progress,.mode-switch button,.print-button{transition:none!important}}
+@media print{nav{position:static}section{padding:34px 0;page-break-inside:avoid}.hero{padding:50px 0}body{font-size:12px}}
+</style>
+<link rel="stylesheet" href="modelo-negocio-meridiano-v1.2.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+<nav aria-label="Navegación principal"><div class="wrap">
+  <a class="brand" href="#top">MERIDIANO</a>
+  <a href="#resumen">Tesis</a>
+  <a href="#jv">Alianza JV</a>
+  <a href="#marca">Marca</a>
+  <a href="#modelos">Modelo</a>
+  <a href="#economics">Finanzas</a>
+  <a href="#operacion">Operación</a>
+  <a href="#roadmap">Roadmap</a>
+  <a href="#riesgos">Riesgos</a>
+  <a href="#cierre">Decisión</a>
+  <select class="nav-select" id="mobileNav" aria-label="Ir a una sección">
+    <option value="#resumen">Resumen</option><option value="#jv">Alianza JV</option><option value="#marca">Marca</option><option value="#modelos">Modelos</option><option value="#economics">Economics</option><option value="#insumos">Insumos</option><option value="#operacion">Operación</option><option value="#roadmap">Roadmap</option><option value="#riesgos">Riesgos</option><option value="#cierre">Cierre inversor</option>
+  </select>
+  <button class="print-button" type="button" aria-label="Imprimir o guardar el dossier como PDF" onclick="window.print()">Imprimir / PDF</button>
+</div><div class="reading-progress" id="readingProgress" aria-hidden="true"></div></nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top"><div class="wrap">
+  <div>
+    <div class="kicker">Dossier maestro de inversión · v1.2 · Julio 2026 · Confidencial</div>
+    <h1>MERI<span>DIANO</span></h1>
+    <div class="lema">«Del Ande al Atlántico. Trazabilidad en cada sorbo.»</div>
+    <p class="sub">Hub de tueste, distribución y experiencia de café de especialidad venezolano en A&nbsp;Coruña — brazo comercial europeo de la cadena de exportación de café verde <b>Cooperativa Cafetalera de Mérida (CCM)</b> × <b>Grupo Biomesa</b>.</p>
+    <div class="meta">
+      <div><b>241.690 €</b><small>Fondos Fases 1+2 reconciliados</small></div>
+      <div><b>≥ 18.000 €/mes</b><small>Gate normalizado antes de escalar</small></div>
+      <div><b>30–40 meses</b><small>Payback simple según Opex utilizado</small></div>
+      <div><b>PROBAT P12 eléctrica</b><small>1–15 kg/lote · hasta 40 kg/h</small></div>
+    </div>
+  </div>
+  <div class="logo-box">
+    <!-- LOGO MERIDIANO -->
+    <svg width="290" height="330" viewBox="0 0 290 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo Meridiano" focusable="false">
+      <circle cx="145" cy="125" r="98" fill="none" stroke="#B08A57" stroke-width="2.5"/>
+      <circle cx="145" cy="125" r="88" fill="none" stroke="#F7F4EE" stroke-width=".7" opacity=".45"/>
+      <!-- meridianos -->
+      <ellipse cx="145" cy="125" rx="46" ry="98" fill="none" stroke="#B08A57" stroke-width="1.4" opacity=".8"/>
+      <ellipse cx="145" cy="125" rx="78" ry="98" fill="none" stroke="#B08A57" stroke-width=".9" opacity=".45"/>
+      <!-- paralelo -->
+      <line x1="47" y1="125" x2="243" y2="125" stroke="#B08A57" stroke-width=".9" opacity=".45"/>
+      <!-- grano de café como eje meridiano -->
+      <path d="M145 53 C 118 85, 118 165, 145 197 C 172 165, 172 85, 145 53 Z" fill="#F7F4EE"/>
+      <path d="M145 60 C 152 92, 138 158, 145 190" fill="none" stroke="#002447" stroke-width="4" stroke-linecap="round"/>
+      <!-- estrella de navegación (Torre de Hércules / rosa de los vientos) -->
+      <path d="M145 8 l6 14 -6 -4 -6 4 Z" fill="#B08A57"/>
+      <circle cx="145" cy="125" r="3.2" fill="#9E5A3C"/>
+      <!-- wordmark -->
+      <text x="145" y="262" text-anchor="middle" font-family="Playfair Display,serif" font-size="34" font-weight="700" letter-spacing="8" fill="#F7F4EE">MERIDIANO</text>
+      <text x="145" y="288" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10.5" letter-spacing="5" fill="#B08A57">CAFÉ DE ORIGEN</text>
+      <text x="145" y="312" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" letter-spacing="3" fill="#F7F4EE" opacity=".65">MÉRIDA 8°35'N — A CORUÑA 43°22'N</text>
+    </svg>
+  </div>
+</div></header>
+
+<main id="main-content" tabindex="-1">
+
+<div class="review-strip" aria-label="Dictamen ejecutivo revisado">
+  <div class="decision"><span>Dictamen</span><strong>Invertir con condiciones</strong></div>
+  <div><span>Primer cheque</span><strong>15.000 €</strong></div>
+  <div><span>Break-even normalizado</span><strong>17.970 €/mes</strong></div>
+  <div><span>Gate de escalado</span><strong>3 meses</strong></div>
+</div>
+
+<aside class="capital-route" aria-labelledby="routeTitle">
+  <div class="wrap route-grid">
+    <div>
+      <div class="sec-kicker">Ruta de liberación de capital</div>
+      <h2 id="routeTitle">El capital avanza solo cuando la evidencia lo permite.</h2>
+      <p class="lead">Tres pruebas convierten una historia de origen en una operación financiable. Cada estación exige evidencia verificable antes de liberar el siguiente tramo.</p>
+    </div>
+    <ol class="route-track">
+      <li data-coord="8°35'N"><h3>Probar origen</h3><p>Acreditar suministro, calidad, trazabilidad y continuidad logística desde Mérida.</p><b>Contrato + cata + trazabilidad</b></li>
+      <li data-coord="A Coruña"><h3>Probar operación</h3><p>Cerrar encaje técnico, permisos, oferta de equipos y puesta en marcha del hub.</p><b>Licencia + oferta + commissioning</b></li>
+      <li data-coord="Gate 3"><h3>Probar demanda</h3><p>Validar recurrencia B2B y margen antes de comprometer el showroom urbano.</p><b>18 k€/mes × 3 + margen ≥ 60%</b></li>
+    </ol>
+  </div>
+</aside>
+
+<!-- ================= RESUMEN EJECUTIVO ================= -->
+<section id="resumen" data-chapter="01" data-nav="Tesis"><div class="wrap">
+  <div class="sec-kicker">01 · Resumen ejecutivo</div>
+  <h2>Tesis de inversión</h2>
+  <p class="lead">MERIDIANO no es una cafetería: es la <b>infraestructura comercial europea</b> de una cadena verticalmente integrada finca→taza. El motor de rentabilidad es un <b>centro de tueste industrial ligero (PROBAT P12)</b> en polígono, con canales B2B, retail y e-commerce; el showroom urbano es el escaparate de marca que se abre <b>después</b>, financiado por el flujo del hub.</p>
+  <div class="grid4">
+    <div class="kpi"><b>420+</b><small>Familias productoras CCM <span class="tag t-diligence">VALIDAR</span></small></div>
+    <div class="kpi"><b>90–92 pts</b><small>Puntuación declarada de lotes CCM <span class="tag t-diligence">VALIDAR</span></small></div>
+    <div class="kpi"><b>0 interm.</b><small>Cadena propia verde→tueste→cliente</small></div>
+    <div class="kpi"><b>2.400 kg/mes</b><small>Capacidad techo tueste P12 (1 turno parcial) <span class="tag t-supuesto">SUPUESTO</span></small></div>
+  </div>
+  <h3>Las siete frases que sostienen la tesis</h3>
+  <div class="steps">
+    <div class="step"><div><h4>El margen está en el kilo, no solo en la taza</h4><p>Comprar verde de especialidad directamente a la cooperativa propia (sin trader) y tostarlo en destino multiplica el valor del kilo ×5–7 en B2B y ×9–11 en retail. La taza es la línea de mayor margen unitario, pero el kilo es la línea escalable.</p></div></div>
+    <div class="step"><div><h4>Separar tueste y showroom reduce el mayor riesgo del proyecto</h4><p>El dossier previo (ACTIVO_01) identificó como gates críticos la extracción, la comunidad y la acometida en un local céntrico. La nave puede simplificar el encaje, pero no lo garantiza: actividad, emisiones, incendios, potencia y acceso de público requieren validación municipal y técnica antes de firmar.</p></div></div>
+    <div class="step"><div><h4>B2B y e-commerce primero, ladrillo premium después</h4><p>La Guashira (Alicante) es una referencia análoga observable de finca + tueste + venta online + campus. Sirve como benchmark operativo y comercial, pero no demuestra por sí sola la rentabilidad ni el calendario de MERIDIANO.</p></div></div>
+    <div class="step"><div><h4>La JV puede integrar origen y acceso comercial europeo</h4><p>La combinación CCM + Grupo Biomesa sería diferencial si se acreditan capacidad de suministro, calidad Q-Grader, trazabilidad por lote, importación UE y continuidad logística. MERIDIANO monetiza esa cadena en destino; los contratos y evidencias que la sostienen son un gate de inversión, no un supuesto gratuito.</p></div></div>
+    <div class="step"><div><h4>El café venezolano está infrarepresentado en el specialty europeo</h4><p>La rareza puede sostener diferenciación y precio, pero debe validarse con un mapa competitivo, pruebas de demanda y certificados de cata por lote. No se tratará como “categoría vacía” hasta completar ese estudio.</p></div></div>
+    <div class="step"><div><h4>A Coruña es puerto, TEN-T y coste operativo contenido</h4><p>Puerto Atlántico con conexión a la red transeuropea, rentas industriales y comerciales muy por debajo de Madrid/Barcelona, y una escena specialty aún poco competida en Galicia.</p></div></div>
+    <div class="step"><div><h4>Disciplina de capital por fases con gates medibles</h4><p>Cada tramo de inversión se libera solo si el anterior cumple KPIs (ventas, margen, conversión). Ningún capex urbano antes de validar el hub.</p></div></div>
+  </div>
+  <div class="visual-proof">
+    <figure class="visual-card"><img src="modelo-negocio-cafe-lujo-assets/ref-cuervo-roasters.jpg" alt="Tostador visible integrado en una cafetería" width="2000" height="1333" loading="lazy" decoding="async"><figcaption><b>Tueste como prueba de oficio</b><small>Referencia: Cuervo Coffee Roasters / Mutar. Foto Javier Agustín Rojas.</small></figcaption></figure>
+    <figure class="visual-card"><img src="modelo-negocio-cafe-lujo-assets/ref-bosgaurus-stage.jpg" alt="Barra de café diseñada como escenario" width="2000" height="1334" loading="lazy" decoding="async"><figcaption><b>Barra como escenario comercial</b><small>Referencia: Bosgaurus Coffee Roasters / NU. Foto Hiroyuki Oki.</small></figcaption></figure>
+  </div>
+  <p class="source-caveat"><b>Criterio de evidencia:</b> las fotografías fijan lenguaje espacial, no prueban economics. Los datos de CCM y Biomesa que proceden de material corporativo permanecen sujetos a due diligence; la ficha P12 sí se contrasta con PROBAT.</p>
+</div></section>
+
+<!-- ================= JV ================= -->
+<section class="dark" id="jv" data-chapter="02" data-nav="Alianza"><div class="wrap">
+  <div class="sec-kicker" style="color:var(--laton)">02 · La alianza</div>
+  <h2>Joint Venture: CCM × Grupo Biomesa</h2>
+  <p class="lead">MERIDIANO se constituye como <b>S.L. española participada</b> por ambos socios, con sede logística y comercial en A Coruña. Cada socio aporta el eslabón que domina; la JV captura el margen de destino que hoy se queda en traders y tostadores terceros.</p>
+  <h3 class="sr-only">Socios de la alianza</h3>
+  <div class="grid2">
+    <div class="card">
+      <h4>Cooperativa Cafetalera de Mérida — CCM 🇻🇪</h4>
+      <p><span class="tag t-diligence">PROMOTOR / VALIDAR</span> La información aportada describe 420+ familias, cultivo andino, procesos diferenciados, cata Q-Grader, QR por lote y exportación internacional. <b>Antes de inversión:</b> incorporar al data room estatutos, censo, certificados de cata, histórico exportador, capacidad comprometible y evidencia del sistema QR. <b>Aporta si se valida:</b> origen, volumen, calidad y narrativa trazable.</p>
+    </div>
+    <div class="card">
+      <h4>Grupo Biomesa — Biomesa Ibérica 🇪🇸</h4>
+      <p><span class="tag t-hecho">WEB CORPORATIVA</span> Grupo Biomesa declara intermediación internacional, unidades regionales y trazabilidad blockchain con contratos por hitos. <b>Antes de inversión:</b> verificar entidades jurídicas, contratos, SLA, arquitectura del ledger y operaciones ejecutadas. <b>Aporta si se valida:</b> importación UE, estructura contractual, logística y continuidad digital finca→taza.</p>
+    </div>
+  </div>
+  <h3>Arquitectura del proyecto mayor</h3>
+  <div class="steps">
+    <div class="step"><div><h4>Origen — Mérida (CCM)</h4><p>Cosecha selectiva, beneficio, cata Q-Grader y QR por lote, sujetos a evidencia documental. La P12 anunciada en origen permitiría compartir recetas iniciales, pero cada instalación deberá recalibrar aire, energía, carga y entorno.</p></div></div>
+    <div class="step"><div><h4>Corredor — Exportación de verde (Biomesa)</h4><p>Contenedores de café verde (GrainPro/yute) La Guaira / Puerto Cabello → A Coruña. Smart contracts por hitos: embarque, arribo, despacho, calidad de arribo.</p></div></div>
+    <div class="step"><div><h4>Destino — Hub MERIDIANO A Coruña</h4><p>Almacén de verde + centro de tueste P12 + envasado + distribución B2B/retail/e-commerce para España y Europa occidental. Venta de verde a otros tostadores europeos como línea adicional.</p></div></div>
+    <div class="step"><div><h4>Escaparate — Showroom urbano (Fase 3)</h4><p>Barra specialty + retail wall + catas y formación en el centro de A Coruña, sin obrador. La ausencia de tueste reduce complejidad, pero la licencia, accesibilidad, incendios, extracción de hostelería y comunidad siguen siendo gates del local concreto.</p></div></div>
+  </div>
+  <div class="note" style="background:rgba(176,138,87,.12);border-left-color:var(--laton);color:rgba(247,244,238,.85)"><span class="tag t-condicion">CONDICIÓN</span> El pacto de socios debe fijar antes de ejecutar: % de participación y aportaciones (verde valorizado, capital, equipos), precio de transferencia del verde CCM→JV (fórmula indexada a NY-C + diferencial specialty), gobernanza (quién decide capex), política de dividendos/reinversión y salida. <span class="tag t-supuesto">SUPUESTO</span> Estructura de trabajo: 45% CCM · 45% Biomesa · 10% equipo gestor local.</div>
+</div></section>
+
+<!-- ================= MARCA ================= -->
+<section id="marca" data-chapter="03" data-nav="Marca"><div class="wrap">
+  <div class="sec-kicker">03 · Identidad</div>
+  <h2>Nombre y marca: MERIDIANO</h2>
+  <p class="lead">El nombre debe contar la tesis del negocio en una palabra: una línea que une <b>Mérida</b> con el Atlántico, la navegación (Torre de Hércules, faro romano de A Coruña) y la precisión técnica del tueste. <b>MERIDIANO</b> hace las tres cosas y funciona igual en español, inglés y portugués.</p>
+  <div class="grid2">
+    <div>
+      <h3>Por qué MERIDIANO</h3>
+      <p><b>Mérida está dentro de la palabra.</b> El guiño al origen es real pero no folklórico: quien conoce el proyecto lo ve; quien no, lee precisión cartográfica y comercio atlántico.</p>
+      <p><b>Es la línea finca→taza hecha nombre.</b> Un meridiano une dos latitudes: 8°35'N (Mérida) y 43°22'N (A Coruña). Esa coordenada doble es el sello de cada bolsa y de cada lote QR.</p>
+      <p><b>Potencialmente registrable y extensible.</b> Admite arquitectura de marca: MERIDIANO Roastery (hub), MERIDIANO Showroom (local), MERIDIANO Verde (venta de green a tostadores), MERIDIANO Club (suscripción). <span class="tag t-condicion">CONDICIÓN</span> Verificar disponibilidad OEPM/EUIPO clase 30, 35 y 43 antes de invertir en rotulación y packaging.</p>
+      <h3>Alternativas evaluadas</h3>
+      <table>
+        <tr><th>Nombre</th><th>Concepto</th><th>Lectura</th></tr>
+        <tr><td><b>Cumbre Atlántica</b></td><td>Altura andina + destino atlántico</td><td>Evocador, pero genérico en specialty</td></tr>
+        <tr><td><b>Faro del Ande</b></td><td>Torre de Hércules + Andes</td><td>Bello, riesgo de sonar a naviera</td></tr>
+        <tr><td><b>Ándara</b></td><td>Neologismo andino, sonoridad gallega</td><td>Fuerte, pero exige más inversión en explicación</td></tr>
+        <tr><td style="color:var(--terra)"><b>Verde Origen</b> (provisional previo)</td><td>Trazabilidad del verde</td><td>Descriptivo, difícil de registrar, poca distintividad</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>Sistema visual</h3>
+      <table>
+        <tr><th>Rol</th><th>Color</th><th class="num">Peso</th></tr>
+        <tr><td>Azul Corporativo Profundo — dominante institucional</td><td class="mono">#002447</td><td class="num">60%</td></tr>
+        <tr><td>Verde Bosque Andino — origen y sostenibilidad</td><td class="mono">#1C3F34</td><td class="num">20%</td></tr>
+        <tr><td>Crema Orgánico Specialty — soporte y packaging</td><td class="mono">#F7F4EE</td><td class="num">10%</td></tr>
+        <tr><td>Dorado Latón Envejecido — detalle premium</td><td class="mono">#B08A57</td><td class="num">7%</td></tr>
+        <tr><td>Terracota Pirólisis — acento de tueste</td><td class="mono">#9E5A3C</td><td class="num">3%</td></tr>
+      </table>
+      <p style="font-size:13px;color:var(--gris)">Tipografías: <b>Playfair Display</b> (titulares), <b>Montserrat</b> (texto/UI), <b>JetBrains Mono</b> (datos, lotes, precios, coordenadas). El logo —globo con meridianos y grano como eje— se entrega en SVG vectorial dentro de este documento y admite versión monocroma para sellado de bolsas y latón para rotulación.</p>
+      <div class="note"><span class="tag t-condicion">CONDICIÓN</span> El QR de trazabilidad CCM se integrará en la etiqueta trasera con la coordenada doble <span class="mono">8°35'N→43°22'N</span> solo cuando el lote, la cadena de custodia y el enlace de Biomesa sean auditables. La narrativa de marca no debe publicarse como prueba hasta superar esa validación.</div>
+    </div>
+  </div>
+</div></section>
+<!-- ================= MODELOS ================= -->
+<section class="green" id="modelos" data-chapter="04" data-nav="Modelo"><div class="wrap">
+  <div class="sec-kicker" style="color:var(--laton)">04 · Opciones de negocio</div>
+  <h2>Cuatro modelos comparados: rentabilidad y velocidad</h2>
+  <p class="lead">La idea inicial (cafetería-boutique con obrador integrado) no es la más rentable ni la más rápida. Comparamos cuatro configuraciones con el mismo rigor <span class="tag t-supuesto">SUPUESTO</span> y recomendamos una secuencia, no una apuesta única.</p>
+  <h3 class="sr-only">Opciones de modelo operativo</h3>
+  <div class="grid4" style="grid-template-columns:repeat(4,1fr);align-items:stretch">
+    <div class="opt">
+      <h4>A · Cafetería con obrador</h4>
+      <div class="sub">Idea inicial (ACTIVO_01)</div>
+      <ul>
+        <li>Inversión total <b>126.800 €</b></li>
+        <li>EBITDA madurez <b>~2.800 €/mes</b></li>
+        <li>Caja positiva <b>mes 10–14</b></li>
+        <li>Payback capex <b>~37 meses</b></li>
+        <li>Riesgo licencias <b style="color:var(--terra)">ALTO</b></li>
+        <li>Escalabilidad <b>Baja</b></li>
+      </ul>
+    </div>
+    <div class="opt">
+      <h4>B · Hub B2B puro</h4>
+      <div class="sub">Nave industrial, sin público</div>
+      <ul>
+        <li>Inversión total <b>201.500 €</b></li>
+        <li>EBITDA madurez <b>~5.300 €/mes</b></li>
+        <li>Caja positiva <b>mes 7–9</b></li>
+        <li>Payback capex <b>~32 meses</b></li>
+        <li>Riesgo licencias <b style="color:var(--laton)">MEDIO-BAJO</b></li>
+        <li>Escalabilidad <b>Alta</b></li>
+      </ul>
+    </div>
+    <div class="opt reco">
+      <div class="badge">Recomendada</div>
+      <h4>C · Hub + Taproom en nave</h4>
+      <div class="sub">La más rápida en rentabilizar</div>
+      <ul>
+        <li>Fondos totales <b>241.690 €</b></li>
+        <li>EBITDA base <b>7.100 caja / 5.300 norm.</b></li>
+        <li>Gate de escala <b>≥18 k€ × 3 m</b></li>
+        <li>Payback simple <b>~30–40 m</b></li>
+        <li>Riesgo licencias <b style="color:var(--laton)">MEDIO</b></li>
+        <li>Escalabilidad <b>Alta</b></li>
+      </ul>
+    </div>
+    <div class="opt">
+      <h4>D · Hub + Showroom centro</h4>
+      <div class="sub">Fase 3 condicionada a KPIs</div>
+      <ul>
+        <li>Fondos totales <b>324.690 €</b></li>
+        <li>EBITDA preliminar <b>9.500 caja / 7.700 norm.</b></li>
+        <li>Caja positiva <b>mes 8–10</b></li>
+        <li>Payback simple <b>~31–38 meses</b></li>
+        <li>Riesgo licencias <b style="color:var(--laton)">MEDIO</b></li>
+        <li>Escalabilidad <b>Muy alta (marca)</b></li>
+      </ul>
+    </div>
+  </div>
+  <div class="note" style="background:rgba(0,0,0,.18);border-left-color:var(--laton);color:rgba(247,244,238,.9)"><b>Dictamen:</b> ejecutar <b>C como Fase 1–2</b> y tratar <b>D como Fase 3 opcional</b>, activable solo si el hub sostiene ≥ 18.000 €/mes de ventas durante 3 meses consecutivos con margen bruto ≥ 60%. El taproom cuesta menos de la mitad del capex incremental del showroom y permite probar catas, formación y venta directa; sigue condicionado a compatibilidad de uso, accesibilidad, incendios y autorización sanitaria.</div>
+  <p class="source-caveat" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:rgba(247,244,238,.75)"><b style="color:var(--laton)">Lectura del payback:</b> se muestra un rango porque la caja de lanzamiento excluye temporalmente la retribución completa de dirección. La decisión inversora debe usar el Opex normalizado. Los modelos B y D siguen siendo estimaciones comparativas hasta completar el modelo mensual de 36 meses.</p>
+
+  <h3>Líneas de ingreso del modelo recomendado (mix objetivo mes 12)</h3>
+  <div class="donut-flex">
+    <div class="donut" aria-hidden="true"></div>
+    <div class="legend">
+      <div><i style="background:var(--azul)"></i> B2B horeca y oficinas — 38% · ~500 kg/mes · PVP medio 21 €/kg</div>
+      <div><i style="background:#2e5d4b"></i> Retail bolsas + e-commerce + suscripción — 30% · ~700 bolsas 250 g</div>
+      <div><i style="background:var(--laton)"></i> Taproom: taza, maridaje y venta directa — 18%</div>
+      <div><i style="background:var(--terra)"></i> Marca blanca / private label — 10% · ~150 kg/mes</div>
+      <div><i style="background:#7d8a99"></i> Catas, formación SCA, visitas al tueste — 4%</div>
+    </div>
+  </div>
+  <p style="font-size:13px;opacity:.8">La venta de <b>café verde</b> a otros tostadores europeos (MERIDIANO Verde) se contabiliza en la matriz de Biomesa Ibérica, no en esta unidad; el hub actúa como su almacén y sala de muestras, reforzando la utilización del activo sin cargar su P&amp;L.</p>
+</div></section>
+
+<!-- ================= ECONOMICS ================= -->
+<section id="economics" data-chapter="05" data-nav="Finanzas"><div class="wrap">
+  <div class="sec-kicker">05 · Modelo económico</div>
+  <h2>Unit economics y estructura financiera</h2>
+  <p class="lead">Enfoque bottom-up. Todo número tiene un driver operativo; los precios sin IVA salvo indicación. Café tostado al 10% IVA, servicios de barra al 10%, formación al 21%.</p>
+
+  <h3>El activo núcleo: PROBAT P12</h3>
+  <table>
+    <tr><th>Parámetro</th><th>Valor</th><th>Fuente / lógica</th></tr>
+    <tr><td>Rango de lote</td><td class="num">1–15 kg</td><td><span class="tag t-hecho">HECHO</span> Ficha oficial PROBAT P Series</td></tr>
+    <tr><td>Capacidad nominal</td><td class="num">hasta 40 kg/h</td><td><span class="tag t-hecho">HECHO</span> Para café; varía con producto, perfil y configuración</td></tr>
+    <tr><td>Plan de producción</td><td class="num">3 lotes/h × 12 kg verde</td><td><span class="tag t-supuesto">SUPUESTO</span> Caso prudente para perfiles specialty, cambios y QC</td></tr>
+    <tr><td>Merma de tueste</td><td class="num">15,5%</td><td><span class="tag t-supuesto">SUPUESTO</span> Estándar specialty medio-claro</td></tr>
+    <tr><td>Producción planificada/día (4 h)</td><td class="num">≈ 120 kg tostado</td><td><span class="tag t-supuesto">SUPUESTO</span> 12 lotes × 12 kg × 0,845; no es la capacidad nominal</td></tr>
+    <tr><td>Techo operativo de planificación</td><td class="num">≈ 2.400 kg/mes</td><td>20 días × 4 h; deja margen para limpieza, mantenimiento y cambios</td></tr>
+    <tr><td>Precio nueva instalada / usada</td><td class="num">78.000 € / 48–55.000 €</td><td><span class="tag t-supuesto">SUPUESTO</span> Requiere oferta formal con heating eléctrico, transporte, puesta en marcha y garantías</td></tr>
+  </table>
+  <div class="note"><b>Sinergia P12 espejo:</b> si se acredita la compra de una P12 en Venezuela, las recetas y datos pueden compartirse como punto de partida. No existe transferencia 1:1 automática: cada instalación debe recalibrar carga, energía, flujo de aire, sensores y condiciones ambientales antes de liberar producción.</div>
+
+  <h3>Coste del kilo tostado (caso base)</h3>
+  <table>
+    <tr><th>Componente</th><th class="num">€/kg tostado</th><th>Driver</th></tr>
+    <tr><td>Café verde CCM landed A Coruña (FOB + flete + despacho)</td><td class="num">7,69</td><td><span class="tag t-supuesto">SUPUESTO</span> 6,50 €/kg verde ÷ 0,845 merma · precio de transferencia JV sin trader</td></tr>
+    <tr><td>Energía de tueste (eléctrica) y nave</td><td class="num">0,25</td><td>~0,9 kWh/kg × tarifa industrial</td></tr>
+    <tr><td>Merma QC, muestras y descarte</td><td class="num">0,22</td><td>2,5% sobre producción</td></tr>
+    <tr><td>Mantenimiento y consumibles máquina</td><td class="num">0,14</td><td>Provisión anual ÷ volumen</td></tr>
+    <tr class="total"><td>Coste base del kg tostado a granel</td><td class="num">8,30</td><td>Antes de packaging por canal</td></tr>
+  </table>
+
+  <h3>Margen por unidad de venta</h3>
+  <table>
+    <tr><th>Unidad</th><th class="num">PVP (sin IVA)</th><th class="num">Coste directo</th><th class="num">Margen</th><th class="num">%</th><th>Lógica</th></tr>
+    <tr><td>Kg B2B horeca (bolsa 5 kg, reparto propio)</td><td class="num">21,00</td><td class="num">8,95</td><td class="num">12,05</td><td class="num">57%</td><td>8,30 + bolsa granel 0,25 + reparto 0,40</td></tr>
+    <tr><td>Bolsa 250 g retail (PVP público 11,90 € IVA inc.)</td><td class="num">10,82</td><td class="num">2,63</td><td class="num">8,19</td><td class="num">76%</td><td>2,08 café + 0,38 bolsa válvula + 0,12 etiquetas QR + 0,05 sellado</td></tr>
+    <tr><td>Bolsa 250 g suscripción (2 uds/mes 21 € env. inc.)</td><td class="num">9,55</td><td class="num">3,91</td><td class="num">5,64</td><td class="num">59%</td><td>Coste bolsa 2,63 + envío prorrateado 1,28 · churn 6%/mes · CAC 12 € · LTV margen ≈ 175 €</td></tr>
+    <tr><td>Kg marca blanca (mín. 60 kg/pedido)</td><td class="num">15,50</td><td class="num">9,10</td><td class="num">6,40</td><td class="num">41%</td><td>Volumen sin coste de marca; llena la máquina</td></tr>
+    <tr><td>Taza specialty taproom (18 g dosis)</td><td class="num">2,73</td><td class="num">0,52</td><td class="num">2,21</td><td class="num">81%</td><td>PVP 3,00 € · café 0,15 + leche/agua 0,18 + desechable/loza 0,19</td></tr>
+    <tr><td>Maridaje premium (café + bombón origen)</td><td class="num">5,45</td><td class="num">1,55</td><td class="num">3,90</td><td class="num">72%</td><td>PVP 6,00 € · ancla de ticket del taproom</td></tr>
+    <tr><td>Cata / taller (plaza, 90 min, 8 pax)</td><td class="num">28,90</td><td class="num">6,20</td><td class="num">22,70</td><td class="num">79%</td><td>PVP 35 € · café + material + 1 h barista</td></tr>
+  </table>
+
+  <h3>CAPEX por fases</h3>
+  <table>
+    <tr><th>Fase 1 · Hub de tueste (nave polígono Agrela/Pocomaco, 250–300 m²)</th><th class="num">€</th></tr>
+    <tr><td>PROBAT P12 nueva instalada (alt.: usada 48–55 k€) <span class="tag t-supuesto">SUPUESTO</span></td><td class="num">78.000</td></tr>
+    <tr><td>Extracción, chimenea, filtro de partículas, sonda y PLC</td><td class="num">12.000</td></tr>
+    <tr><td>Destoner + 8 silos de reposo + carros inox</td><td class="num">6.000</td></tr>
+    <tr><td>Línea de envasado + packaging inicial (detalle en §06)</td><td class="num">5.980</td></tr>
+    <tr><td>Laboratorio QC: molino cata, kit cupping, refractómetro, básculas, Agtron/colorímetro básico</td><td class="num">3.500</td></tr>
+    <tr><td>Adecuación nave: obra ligera, APPCC, almacén verde sobre palets plásticos, clima pasivo</td><td class="num">18.000</td></tr>
+    <tr><td>Ingeniería, proyecto técnico, licencia actividad, ECA, altas</td><td class="num">6.500</td></tr>
+    <tr><td>Logística interna: transpaleta, estanterías, palets, báscula 300 kg</td><td class="num">2.500</td></tr>
+    <tr><td>Stock inicial: 3.000 kg verde CCM</td><td class="num">19.500</td></tr>
+    <tr><td>Software año 1 (Cropster, Shopify, TPV, contabilidad) + web</td><td class="num">4.200</td></tr>
+    <tr><td>Contingencia 10% redondeada</td><td class="num">15.620</td></tr>
+    <tr class="total"><td>Subtotal Fase 1</td><td class="num">171.800</td></tr>
+    <tr><td>Caja operativa de seguridad (4 meses de opex hub)</td><td class="num">30.800</td></tr>
+    <tr class="total"><td><b>Total Fase 1</b></td><td class="num"><b>202.600</b></td></tr>
+  </table>
+  <table>
+    <tr><th>Fase 2 · Taproom en nave (60–80 m² dentro del hub)</th><th class="num">€</th></tr>
+    <tr><td>Equipo espresso 2 grupos de especificación MVP + molino gravimétrico GbW/equivalente; KB90 reservada como ancla de Fase 3 <span class="tag t-condicion">COTIZAR</span></td><td class="num">13.500</td></tr>
+    <tr><td>Tratamiento de agua (ósmosis + remineralización BWT)</td><td class="num">1.800</td></tr>
+    <tr><td>Lavavasos, frío, vitrina maridaje</td><td class="num">4.300</td></tr>
+    <tr><td>Menaje completo, loza, brew bar (detalle en §06)</td><td class="num">3.640</td></tr>
+    <tr><td>Mobiliario, barra vista al tueste, acústica, señalética</td><td class="num">9.500</td></tr>
+    <tr><td>Licencia degustación aneja + adecuación sanitaria</td><td class="num">2.800</td></tr>
+    <tr><td>Contingencia 10%</td><td class="num">3.550</td></tr>
+    <tr class="total"><td><b>Total Fase 2</b></td><td class="num"><b>39.090</b></td></tr>
+  </table>
+  <table>
+    <tr><th>Fase 3 · Showroom centro A Coruña (opcional, gate por KPIs) — sin obrador</th><th class="num">€</th></tr>
+    <tr><td>Ancla premium: La Marzocco KB90 2 grupos + 2º grinder + EK43S</td><td class="num">24.500</td></tr>
+    <tr><td>Obra, interiorismo, mobiliario, retail wall</td><td class="num">33.000</td></tr>
+    <tr><td>Licencias, proyecto, fianzas, preapertura y stock</td><td class="num">9.500</td></tr>
+    <tr><td>Contingencia + caja 3 meses</td><td class="num">16.000</td></tr>
+    <tr class="total"><td><b>Total Fase 3</b></td><td class="num"><b>83.000</b></td></tr>
+  </table>
+  <div class="equipment-proof" id="maquinaria" aria-label="Referencias de maquinaria de barra">
+    <figure class="equipment-item">
+      <img src="modelo-negocio-cafe-lujo-assets/kb90.webp" alt="Máquina de espresso La Marzocco KB90 de dos grupos" width="800" height="800" loading="lazy" decoding="async">
+      <figcaption><span>Ancla premium · Fase 3</span><b>La Marzocco KB90</b><small>Se reserva para el showroom urbano: aquí su presencia escénica y ergonomía justifican el capex. No forma parte del equipo MVP presupuestado para validar el taproom.</small></figcaption>
+    </figure>
+    <figure class="equipment-item compact">
+      <img src="modelo-negocio-cafe-lujo-assets/grinder-gbw.webp" alt="Molino Mahlkönig E65S GbW con dosificación gravimétrica" width="1200" height="1500" loading="lazy" decoding="async">
+      <figcaption><span>Requisito funcional</span><b>Molienda GbW</b><small>E65S GbW o equivalente vigente, sujeto a servicio técnico, precisión y oferta formal en España.</small></figcaption>
+    </figure>
+  </div>
+  <div class="grid3">
+    <div class="kpi"><b>241.690 €</b><small>Fases 1+2 (modelo C recomendado)</small></div>
+    <div class="kpi"><b>324.690 €</b><small>Programa completo con Fase 3 (modelo D)</small></div>
+    <div class="kpi"><b>−23.000 €</b><small>Ahorro si P12 usada certificada</small></div>
+  </div>
+  <p style="font-size:12.5px;color:var(--gris)">Caso con P12 nueva instalada. <b>Fondos totales F1+F2: 241.690 €.</b> Capex productivo usado para payback simple: 210.890 € (excluye 30.800 € de caja de seguridad). Una P12 usada solo reducirá inversión si supera inspección, garantía, transporte y puesta en marcha. <span class="tag t-supuesto">SUPUESTO</span></p>
+
+  <h3>OPEX mensual (Fases 1+2 operando)</h3>
+  <div class="bar-row"><div class="lbl">Personal (tostador jefe, operario PT, barista PT)</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--azul)"></div></div><div class="bar-val">4.900 €</div></div>
+  <div class="bar-row"><div class="lbl">Renta nave 250–300 m² polígono</div><div class="bar-track"><div class="bar-fill" style="width:33%;background:var(--verde)"></div></div><div class="bar-val">1.600 €</div></div>
+  <div class="bar-row"><div class="lbl">Energía, agua, clima</div><div class="bar-track"><div class="bar-fill" style="width:16%;background:var(--laton)"></div></div><div class="bar-val">800 €</div></div>
+  <div class="bar-row"><div class="lbl">Logística y reparto B2B</div><div class="bar-track"><div class="bar-fill" style="width:12%;background:var(--terra)"></div></div><div class="bar-val">600 €</div></div>
+  <div class="bar-row"><div class="lbl">Marketing y adquisición (perf. + contenidos)</div><div class="bar-track"><div class="bar-fill" style="width:12%;background:#7d8a99"></div></div><div class="bar-val">600 €</div></div>
+  <div class="bar-row"><div class="lbl">Seguros, gestoría, PRL, APPCC</div><div class="bar-track"><div class="bar-fill" style="width:10%;background:#44576b"></div></div><div class="bar-val">480 €</div></div>
+  <div class="bar-row"><div class="lbl">Mantenimiento, plagas, limpieza técnica</div><div class="bar-track"><div class="bar-fill" style="width:9%;background:#2e5d4b"></div></div><div class="bar-val">420 €</div></div>
+  <div class="bar-row"><div class="lbl">Software y comunicaciones</div><div class="bar-track"><div class="bar-fill" style="width:6%;background:#8a6a3f"></div></div><div class="bar-val">300 €</div></div>
+  <div class="bar-row"><div class="lbl"><b>OPEX caja de lanzamiento</b></div><div class="bar-track"><div class="bar-fill" style="width:84%;background:linear-gradient(90deg,var(--azul),var(--laton))"></div></div><div class="bar-val"><b>9.700 €</b></div></div>
+  <div class="bar-row"><div class="lbl">Dirección comercial/gestión normalizada</div><div class="bar-track"><div class="bar-fill" style="width:16%;background:#6f5b91"></div></div><div class="bar-val">1.800 €</div></div>
+  <div class="bar-row"><div class="lbl"><b>OPEX de decisión inversora</b></div><div class="bar-track"><div class="bar-fill" style="width:100%;background:linear-gradient(90deg,var(--azul),#6f5b91,var(--laton))"></div></div><div class="bar-val"><b>11.500 €</b></div></div>
+
+  <h3>Break-even y escenarios</h3>
+  <p>Con margen bruto ponderado del mix objetivo ≈ <b>64%</b>, hay dos lecturas: <b>15.160 €/mes</b> cubren la caja de lanzamiento de 9.700 €, pero el break-even normalizado para decidir inversión es <b>17.970 €/mes</b> sobre Opex de 11.500 €. El gate comercial se redondea a <b>18.000 €/mes durante 3 meses</b>.</p>
+  <table>
+    <tr><th>Escenario (mes 12–18)</th><th class="num">Ventas/mes</th><th class="num">Margen bruto</th><th class="num">EBITDA caja</th><th class="num">EBITDA normalizado</th><th class="num">Payback normalizado*</th></tr>
+    <tr><td>Conservador — B2B lento (8 cuentas), e-comm débil</td><td class="num">16.400 €</td><td class="num">10.330 €</td><td class="num">630 €</td><td class="num">−1.170 €</td><td class="num">No repaga</td></tr>
+    <tr><td><b>Base</b> — 14 cuentas B2B, 700 bolsas, taproom 35 tickets/día</td><td class="num">26.300 €</td><td class="num">16.800 €</td><td class="num">7.100 €</td><td class="num">5.300 €</td><td class="num">~40 m</td></tr>
+    <tr><td>Upside — 22 cuentas, marca blanca 300 kg, club 450 socios</td><td class="num">35.900 €</td><td class="num">22.600 €</td><td class="num">12.900 €</td><td class="num">11.100 €</td><td class="num">~19 m</td></tr>
+  </table>
+  <p style="font-size:12px;color:var(--gris)">* Payback simple sobre 210.890 € de capex productivo, sin rampa, impuestos, financiación ni variación de circulante. El modelo mensual de 36 meses debe calcular el cash payback real.</p>
+  <div class="simulator" aria-labelledby="simTitle">
+    <div class="sec-kicker">Simulador de consistencia</div>
+    <h3 id="simTitle" style="margin:0;color:var(--azul)">Pruebe ventas, margen y nivel de Opex</h3>
+    <div class="sim-grid">
+      <div class="control"><label for="salesRange">Ventas mensuales <output id="salesOutput">26.300 €</output></label><input id="salesRange" type="range" min="12000" max="40000" step="100" value="26300"></div>
+      <div class="control"><label for="marginRange">Margen bruto ponderado <output id="marginOutput">64%</output></label><input id="marginRange" type="range" min="55" max="72" step="1" value="64"></div>
+    </div>
+    <div class="mode-switch" aria-label="Nivel de Opex">
+      <button type="button" data-opex="9700" aria-pressed="false">Caja lanzamiento · 9.700 €</button>
+      <button type="button" data-opex="11500" aria-pressed="true">Normalizado inversor · 11.500 €</button>
+    </div>
+    <div class="sim-results">
+      <div><b id="simEbitda">5.332 €</b><small>EBITDA mensual</small></div>
+      <div><b id="simBreakEven">17.969 €</b><small>Break-even</small></div>
+      <div><b id="simPayback">40 meses</b><small>Payback simple</small></div>
+    </div>
+    <p class="sim-status" id="simStatus" role="status" aria-live="polite">Caso base defendible, pero el payback aún exige disciplina comercial.</p>
+  </div>
+  <div class="note warn"><span class="tag t-condicion">CONDICIÓN</span> El escenario conservador no repaga en plazo razonable: la tesis exige disciplina comercial B2B desde el mes 1 (objetivo: 1–2 cuentas horeca nuevas/mes) y un e-commerce operativo antes de encender la máquina. Si al mes 9 las ventas no superan 12.000 €/mes, congelar Fase 3 y revisar mix hacia marca blanca y venta de verde.</div>
+
+  <h3>Sensibilidad (EBITDA base ±)</h3>
+  <table>
+    <tr><th>Variable</th><th>Movimiento</th><th class="num">Impacto EBITDA/mes</th></tr>
+    <tr><td>Precio café verde landed</td><td>+1,00 €/kg</td><td class="num">−1.030 €</td></tr>
+    <tr><td>PVP B2B</td><td>−1,00 €/kg</td><td class="num">−500 €</td></tr>
+    <tr><td>Volumen B2B</td><td>−100 kg/mes</td><td class="num">−1.205 €</td></tr>
+    <tr><td>Renta nave</td><td>+300 €/mes</td><td class="num">−300 €</td></tr>
+    <tr><td>Churn suscripción</td><td>6% → 9%/mes</td><td class="num">−340 €</td></tr>
+  </table>
+  <p style="font-size:13px;color:var(--gris)">La variable dominante es el verde. La JV puede reducir intermediación, pero no elimina volatilidad, divisa, calidad ni riesgo logístico; el precio de transferencia debe fijarse con banda anual, fórmula auditada y mecanismo de revisión. <span class="tag t-condicion">CONDICIÓN</span></p>
+</div></section>
+<!-- ================= INSUMOS ================= -->
+<section class="dark" id="insumos" data-chapter="06" data-nav="Insumos"><div class="wrap">
+  <div class="sec-kicker" style="color:var(--laton)">06 · Ingeniería de detalle</div>
+  <h2>Catálogo exhaustivo de insumos y equipamiento</h2>
+  <p class="lead">Todo lo que hay que comprar, hasta la última bolsa. Precios de mercado España 2026 sin IVA <span class="tag t-supuesto">SUPUESTO</span>, a cerrar con 2–3 ofertas por partida antes de ejecutar.</p>
+  <details class="detail-panel">
+    <summary aria-controls="equipmentCatalog" aria-expanded="false">Ver catálogo completo de equipos y consumibles</summary>
+    <div class="detail-content" id="equipmentCatalog">
+
+  <h3>A · Línea de envasado y etiquetado</h3>
+  <table>
+    <tr><th>Ítem</th><th class="num">Ud./lote inicial</th><th class="num">€/ud</th><th class="num">Total €</th><th>Nota operativa</th></tr>
+    <tr><td>Bolsa 250 g kraft/foil, válvula desgasificación, zip, base plana</td><td class="num">5.000</td><td class="num">0,38</td><td class="num">1.900</td><td>Stock 7 meses al mix base; impresión genérica + etiqueta</td></tr>
+    <tr><td>Bolsa 1 kg válvula (retail grande / oficinas)</td><td class="num">1.000</td><td class="num">0,62</td><td class="num">620</td><td></td></tr>
+    <tr><td>Bolsa 5 kg granel B2B con válvula</td><td class="num">400</td><td class="num">1,45</td><td class="num">580</td><td>Retornables a estudiar en fase 2</td></tr>
+    <tr><td>Selladora de banda continua horizontal (tipo FR-900)</td><td class="num">1</td><td class="num">520</td><td class="num">520</td><td>Ritmo ~8 bolsas/min; impresor de fecha/lote integrado</td></tr>
+    <tr><td>Selladora de impulso de pedal (backup)</td><td class="num">1</td><td class="num">160</td><td class="num">160</td><td>Redundancia obligatoria: sin sellado no hay venta</td></tr>
+    <tr><td>Impresora de etiquetas térmica industrial (Zebra ZD421 o equiv.)</td><td class="num">1</td><td class="num">480</td><td class="num">480</td><td>Etiqueta frontal + trasera QR lote CCM/blockchain</td></tr>
+    <tr><td>Etiquetas adhesivas premium (frontal cream + trasera)</td><td class="num">12.000</td><td class="num">0,065</td><td class="num">780</td><td>2 por bolsa</td></tr>
+    <tr><td>Báscula de precisión envasado 0,1 g / 6 kg</td><td class="num">2</td><td class="num">70</td><td class="num">140</td><td></td></tr>
+    <tr><td>Dosificador/tolva de llenado con soporte</td><td class="num">1</td><td class="num">350</td><td class="num">350</td><td>Manual fase 1; auger automático solo &gt;1.500 kg/mes</td></tr>
+    <tr><td>Mesa de trabajo acero inox 2 m + utillaje</td><td class="num">1</td><td class="num">450</td><td class="num">450</td><td></td></tr>
+    <tr class="total"><td>Subtotal línea de envasado</td><td class="num"></td><td class="num"></td><td class="num">5.980</td><td>2.100 € equipo + 3.880 € packaging inicial; ambos incluidos en fondos de lanzamiento</td></tr>
+  </table>
+
+  <h3>B · Barra y sala (taproom Fase 2)</h3>
+  <table>
+    <tr><th>Ítem</th><th class="num">Uds.</th><th class="num">€/ud</th><th class="num">Total €</th><th>Nota</th></tr>
+    <tr><td>Tazas espresso + platillo loza premium (Acme/Loveramics)</td><td class="num">36</td><td class="num">8,5</td><td class="num">306</td><td>3 rotaciones de 12</td></tr>
+    <tr><td>Tazas flat white / cappuccino</td><td class="num">36</td><td class="num">9,5</td><td class="num">342</td><td></td></tr>
+    <tr><td>Vasos filtrado / taster (vidrio doble pared)</td><td class="num">24</td><td class="num">7</td><td class="num">168</td><td></td></tr>
+    <tr><td>Vasos takeaway compostables + tapa (PLA)</td><td class="num">3.000</td><td class="num">0,16</td><td class="num">480</td><td>Con sello de marca 1 tinta</td></tr>
+    <tr><td>Jarras de leche inox 350/600 ml</td><td class="num">6</td><td class="num">22</td><td class="num">132</td><td></td></tr>
+    <tr><td>Básculas de barra (Acaia Lunar o equiv.)</td><td class="num">2</td><td class="num">250</td><td class="num">500</td><td></td></tr>
+    <tr><td>Tampers, distribuidor, portafiltros extra, knockbox</td><td class="num">1 set</td><td class="num">380</td><td class="num">380</td><td></td></tr>
+    <tr><td>Brew bar: V60, Chemex, AeroPress, hervidor cuello de cisne, filtros</td><td class="num">1 set</td><td class="num">520</td><td class="num">520</td><td>También material de catas</td></tr>
+    <tr><td>Kit cupping SCA (cucharas, bowls, kettles)</td><td class="num">2 sets</td><td class="num">180</td><td class="num">360</td><td></td></tr>
+    <tr><td>Menaje maridaje: pizarras, pinzas, campanas, servilletero</td><td class="num">1 set</td><td class="num">452</td><td class="num">452</td><td>«Joyería comestible» (ACTIVO_05)</td></tr>
+    <tr class="total"><td>Subtotal menaje y brew bar</td><td class="num"></td><td class="num"></td><td class="num">3.640</td><td></td></tr>
+  </table>
+
+  <h3>C · Merchandising y retail no-café</h3>
+  <table>
+    <tr><th>Ítem</th><th class="num">Uds.</th><th class="num">Coste €</th><th class="num">PVP €</th><th class="num">Margen</th></tr>
+    <tr><td>Taza cerámica logo MERIDIANO (caja regalo)</td><td class="num">200</td><td class="num">5,20</td><td class="num">16,50</td><td class="num">68%</td></tr>
+    <tr><td>Tote bag algodón orgánico serigrafiada</td><td class="num">300</td><td class="num">3,10</td><td class="num">12,00</td><td class="num">74%</td></tr>
+    <tr><td>Camiseta staff/venta (bordado latón)</td><td class="num">80</td><td class="num">9,80</td><td class="num">28,00</td><td class="num">65%</td></tr>
+    <tr><td>Dripper V60 co-branded + pack filtros</td><td class="num">60</td><td class="num">6,40</td><td class="num">19,50</td><td class="num">67%</td></tr>
+    <tr><td>Set regalo corporativo (2×250 g + taza + tarjeta lote QR)</td><td class="num">150</td><td class="num">11,90</td><td class="num">34,00</td><td class="num">65%</td></tr>
+    <tr><td>Postales/etiquetas coordenadas 8°35'N→43°22'N</td><td class="num">1.000</td><td class="num">0,18</td><td class="num">—</td><td class="num">Regalo en pedidos</td></tr>
+    <tr class="total"><td>Inversión inicial merchandising</td><td class="num"></td><td class="num">≈ 5.100</td><td class="num"></td><td class="num">Rotación estimada 4–5 meses · dentro de preapertura F2/F3</td></tr>
+  </table>
+
+  <h3>D · Consumibles operativos recurrentes (€/mes al mix base)</h3>
+  <table>
+    <tr><th>Partida</th><th class="num">€/mes</th><th>Driver</th></tr>
+    <tr><td>Bolsas + etiquetas + sellado (retail y B2B)</td><td class="num">490</td><td>700 bolsas 250 g + 60 de 1 kg + 40 de 5 kg</td></tr>
+    <tr><td>Leche fresca gallega + alternativas vegetales</td><td class="num">340</td><td>~35 tickets/día taproom, 60% con leche</td></tr>
+    <tr><td>Vasos takeaway, servilletas, removedores</td><td class="num">150</td><td></td></tr>
+    <tr><td>Bombonería/maridaje (chocolate origen venezolano)</td><td class="num">310</td><td>Coste 1,55 €/maridaje × ~200/mes · doble narrativa cacao+café</td></tr>
+    <tr><td>Cartonaje e-commerce, relleno, cinta marca</td><td class="num">120</td><td>~250 envíos/mes</td></tr>
+    <tr><td>Química de limpieza (Cafiza, Rinza, filtros agua)</td><td class="num">95</td><td></td></tr>
+    <tr class="total"><td>Total consumibles</td><td class="num">1.485</td><td>Incluido en el cálculo de coste directo por unidad</td></tr>
+  </table>
+    </div>
+  </details>
+</div></section>
+
+<!-- ================= OPERACIÓN ================= -->
+<section id="operacion" data-chapter="07" data-nav="Operación"><div class="wrap">
+  <div class="sec-kicker">07 · Operatividad</div>
+  <h2>Procesos: del contenedor a la taza</h2>
+  <p class="lead">La operación se diseña como <b>light manufacturing + retail</b>: marcha hacia adelante sin cruces, calendario de tueste separado del servicio y APPCC desde el día 1.</p>
+  <h3 class="sr-only">Secuencia operativa</h3>
+  <div class="steps">
+    <div class="step"><div><h4>Recepción e importación</h4><p>Contenedor CCM (sacos 30/69 kg en GrainPro) despachado por Biomesa Ibérica en el puerto de A Coruña. Control de arribo: humedad (objetivo 10,5–11,5%), actividad de agua y cata contra muestra pre-embarque. El alta en Cropster es obligatoria; el registro blockchain solo se activa cuando la integración Biomesa y la cadena de custodia estén verificadas.</p></div></div>
+    <div class="step"><div><h4>Almacenamiento del verde</h4><p>Zona seca de la nave, palets plásticos (no porosos), 18–22 °C, HR &lt; 65%, control de plagas contratado. FIFO estricto por lote QR. Stock de seguridad: 8 semanas de consumo.</p></div></div>
+    <div class="step"><div><h4>Tueste programado (PROBAT P12)</h4><p>2–3 días de tueste/semana en bloques de 4 h, fuera del horario del taproom. Las recetas compartidas desde Mérida se usan como punto de partida y se recalibran en A Coruña. Cada lote: muestra QC, color, cata a 24 h. Desgasificación 4–10 días según canal.</p></div></div>
+    <div class="step"><div><h4>Envasado y etiquetado</h4><p>Pesado (báscula 0,1 g) → llenado por tolva → sellado banda continua con impresión de fecha/lote → etiqueta frontal + trasera con QR de trazabilidad. Objetivo: 120 bolsas/hora con 1 operario. Registro de mermas semanal.</p></div></div>
+    <div class="step"><div><h4>Distribución multicanal</h4><p>B2B: ruta propia 2 días/semana (A Coruña–Santiago–Ferrol) + agencia para resto de España. E-commerce: cut-off 13:00, envío 24–72 h, gratis &gt; 35 € (regla La Guashira). Suscripción: tueste del lunes, envío del martes.</p></div></div>
+    <div class="step"><div><h4>Taproom y experiencia</h4><p>Barra frente al tueste: el cliente ve la máquina trabajar. Carta corta (espresso, filtrado, maridaje). Catas y visitas guiadas los sábados (35 €/plaza). Cada mesa con tarjeta QR del lote servido: la trazabilidad es el espectáculo.</p></div></div>
+    <div class="step"><div><h4>Calidad y mejora continua</h4><p>KPIs semanales: kg tostados, merma, % conversión sala→bolsa, tickets/día, MRR suscripción, churn, NPS B2B. Cata de calibración semanal del equipo. Auditoría APPCC trimestral.</p></div></div>
+  </div>
+  <h3>Estructura de personal (Fases 1+2)</h3>
+  <table>
+    <tr><th>Rol</th><th>Dedicación</th><th class="num">Coste empresa/mes</th><th>Responsabilidad</th></tr>
+    <tr><td>Maestro tostador / responsable producción</td><td>FT</td><td class="num">2.450 €</td><td>Tueste, QC, compras, APPCC, formación</td></tr>
+    <tr><td>Operario envasado + logística</td><td>PT 25 h</td><td class="num">1.150 €</td><td>Envasado, pedidos, reparto B2B</td></tr>
+    <tr><td>Barista taproom (Fase 2)</td><td>PT 30 h + refuerzo sáb.</td><td class="num">1.300 €</td><td>Barra, catas, venta retail</td></tr>
+    <tr><td>Dirección comercial (socio gestor)</td><td>Normalizada</td><td class="num">1.800 €</td><td>B2B, marca blanca, alianzas y reporting; puede diferirse en caja, pero no eliminarse del caso inversor <span class="tag t-supuesto">SUPUESTO</span></td></tr>
+    <tr class="total"><td>Nómina caja lanzamiento</td><td></td><td class="num">4.900 €</td><td>Retribución de dirección temporalmente diferida</td></tr>
+    <tr class="total"><td>Nómina normalizada de decisión</td><td></td><td class="num">6.700 €</td><td>Incluye dirección comercial/gestión</td></tr>
+  </table>
+</div></section>
+
+<!-- ================= GO-TO-MARKET ================= -->
+<section class="green" id="gtm" data-chapter="08" data-nav="Mercado"><div class="wrap">
+  <div class="sec-kicker" style="color:var(--laton)">08 · Go-to-market</div>
+  <h2>Estrategia comercial (benchmark adaptado de La Guashira)</h2>
+  <p class="lead">La Guashira demuestra públicamente la coexistencia de finca propia, tueste en Alicante, e-commerce, suscripción, venta de verde y recogida en campus. Se toma como referencia análoga de canal, no como validación financiera ni prueba de que la misma secuencia funcionará en A Coruña.</p>
+  <h3 class="sr-only">Tácticas y ventajas comerciales</h3>
+  <div class="grid2">
+    <div class="card"><h4>Tácticas observadas en la referencia</h4><p>· Frescura semanal como promesa verificable.<br>· Envío gratis &gt; 35 € para elevar el pedido medio.<br>· Packs de perfiles y formatos como puerta de entrada y regalo.<br>· Suscripción como ingreso recurrente.<br>· Venta de <b>café verde</b> a tostadores y prosumers.<br>· Accesorios de preparación en e-commerce.<br>· Campus, formación y talleres como canal de relación.<br>· Contenido SEO de categoría. <span class="tag t-supuesto">ADAPTAR / TESTEAR</span></p></div>
+    <div class="card"><h4>Ventajas diferenciales a demostrar</h4><p>· Origen venezolano infrarepresentado y lotes de alta puntuación documentada.<br>· QR CCM + trazabilidad Biomesa auditables de extremo a extremo.<br>· P12 en origen y destino como lenguaje técnico común, con recalibración local.<br>· Cacao fino venezolano como extensión coherente de maridaje y retail.<br>· Gifting corporativo con impacto respaldado por evidencias.<br>· Puerto de A Coruña como nodo logístico, sujeto a cotización real de rutas y frecuencia.</p></div>
+  </div>
+  <h3>Embudo comercial por canal (objetivos año 1)</h3>
+  <table>
+    <tr><th>Canal</th><th>Acción</th><th class="num">KPI mes 12</th></tr>
+    <tr><td>B2B horeca</td><td>50 visitas/mes con muestras + cesión de molino en comodato a cuentas ≥ 25 kg/mes</td><td class="num">14 cuentas · 500 kg/mes</td></tr>
+    <tr><td>E-commerce</td><td>SEO + Meta/Google Ads (CAC ≤ 12 €) + email flows</td><td class="num">250 pedidos/mes · AOV 32 €</td></tr>
+    <tr><td>Suscripción</td><td>Descuento 12% + acceso a microlotes exclusivos</td><td class="num">180 socios · churn ≤ 6%</td></tr>
+    <tr><td>Marca blanca</td><td>2 acuerdos con retailers/hostelería premium gallega</td><td class="num">150 kg/mes</td></tr>
+    <tr><td>Taproom</td><td>Apertura mes 7; catas sábados; visitas al tueste</td><td class="num">35 tickets/día · conversión a bolsa ≥ 18%</td></tr>
+    <tr><td>Corporate gifting</td><td>Campañas sept–dic; catálogo B2B</td><td class="num">≥ 8.000 € en Q4</td></tr>
+  </table>
+</div></section>
+
+<!-- ================= ROADMAP ================= -->
+<section id="roadmap" data-chapter="09" data-nav="Roadmap"><div class="wrap">
+  <div class="sec-kicker">09 · Plan de ejecución</div>
+  <h2>Roadmap 0–24 meses con gates de capital</h2>
+  <h3 class="sr-only">Hitos y gates de capital</h3>
+  <div class="steps">
+    <div class="step"><div><h4>Mes 0–2 · Constitución y gates previos <span class="mono" style="font-size:11px;color:var(--terra)">DESEMBOLSO: 15 k€</span></h4><p>Constitución S.L. y pacto de socios · registro de marca OEPM/EUIPO · búsqueda de nave con informe de compatibilidad urbanística <span class="tag t-condicion">CONDICIÓN</span> · pedido P12 (lead time 3–5 meses) · primer contenedor de verde en tránsito · web y preventa.</p></div></div>
+    <div class="step"><div><h4>Mes 3–5 · Montaje del hub <span class="mono" style="font-size:11px;color:var(--terra)">HASTA COMPLETAR F1: +187,6 k€</span></h4><p>Adecuación de nave, instalación P12 + extracción, línea de envasado, APPCC, altas sanitarias y caja de seguridad. El calendario de desembolso debe acompasarse a contrato, fabricación, FAT/SAT y licencias; no liberar el tramo completo sin hitos.</p></div></div>
+    <div class="step"><div><h4>Mes 6 · Encendido y primeras cuentas <span class="mono" style="font-size:11px;color:var(--laton)">GATE 1: máquina operativa + 5 cuentas B2B firmadas</span></h4><p>Producción propia en A Coruña. Ofensiva comercial horeca. Objetivo salida: 6.000 €/mes de ventas.</p></div></div>
+    <div class="step"><div><h4>Mes 7–9 · Taproom <span class="mono" style="font-size:11px;color:var(--terra)">DESEMBOLSO: 39,09 k€ · GATE 2: ≥10 k€/mes + licencia validada</span></h4><p>Apertura de la sala solo con compatibilidad de uso, accesibilidad, incendios y sanidad resueltos. Catas, visitas y venta directa deben probar conversión sin comprometer el gate normalizado de 18 k€/mes.</p></div></div>
+    <div class="step"><div><h4>Mes 10–15 · Escala <span class="mono" style="font-size:11px;color:var(--laton)">GATE 3: ventas ≥ 18 k€/mes × 3 meses, MB ≥ 60%</span></h4><p>Marca blanca, gifting Q4, suscripción a 180 socios, exploración B2B norte de Portugal. Decisión sobre Fase 3.</p></div></div>
+    <div class="step"><div><h4>Mes 16–24 · Fase 3 opcional: showroom centro <span class="mono" style="font-size:11px;color:var(--terra)">DESEMBOLSO: 83 k€ (solo si Gate 3 cumplido)</span></h4><p>Local céntrico sin obrador, KB90 como ancla y retail wall. Su apertura sigue condicionada a compatibilidad de uso, comunidad, accesibilidad, incendios, ventilación y sanidad. Una segunda ciudad solo se estudia con showroom en EBITDA positivo, hub ≥ 18 k€/mes y utilización ≥ 55%.</p></div></div>
+  </div>
+</div></section>
+
+<!-- ================= RIESGOS ================= -->
+<section class="dark" id="riesgos" data-chapter="10" data-nav="Riesgos"><div class="wrap">
+  <div class="sec-kicker" style="color:var(--laton)">10 · Riesgos</div>
+  <h2>Riesgos y mitigaciones</h2>
+  <table>
+    <tr><th>Riesgo</th><th>Severidad</th><th>Mitigación</th></tr>
+    <tr><td>País/logística Venezuela: retrasos de embarque, cambios regulatorios de exportación</td><td>Alta</td><td>Stock de seguridad 8 semanas · dual-sourcing contractual de contingencia sin confundir el origen de marca · pagos y liberación documental por hitos verificables</td></tr>
+    <tr><td>Licencias y actividad (nave)</td><td>Alta hasta validar</td><td>Informe municipal de compatibilidad, proyecto técnico, incendios, emisiones, extracción y encaje sanitario ANTES de firmar o liberar capex <span class="tag t-condicion">NO-GO</span></td></tr>
+    <tr><td>Concentración comercial B2B lenta</td><td>Alta</td><td>Gate de capital por fases; pivote a marca blanca y venta de verde si mes 9 &lt; 12 k€/mes</td></tr>
+    <tr><td>Precio del verde / divisa</td><td>Media</td><td>Precio de transferencia JV con banda anual pactada; el proveedor es socio y participa del margen de destino</td></tr>
+    <tr><td>Dependencia de personas clave (maestro tostador)</td><td>Media</td><td>Perfiles Cropster documentados, recetas recalibradas entre Mérida y A Coruña y formación cruzada CCM↔Coruña</td></tr>
+    <tr><td>Competencia y demanda specialty local</td><td>Media–alta hasta validar</td><td>Mapa competitivo, catas pagadas, preventa, cartas de intención y prueba de precio; la infrarepresentación venezolana no equivale por sí sola a demanda ni a moat</td></tr>
+    <tr><td>Sobredimensionar la experiencia antes de validar (error clásico)</td><td>Media</td><td>El showroom céntrico es Fase 3 condicionada, nunca el punto de partida</td></tr>
+  </table>
+  <h3>Cuatro preguntas duras del inversor (y la respuesta corta)</h3>
+  <div class="grid2">
+    <div class="card"><h4>«¿Por qué no depende de una cafetería?»</h4><p>Porque el caso objetivo concentra el margen en kilos B2B/retail y mantiene el taproom como canal de prueba y marca. El mix debe demostrarse mensualmente; no se usa una estadística genérica de cierres como argumento.</p></div>
+    <div class="card"><h4>«¿Qué pasa si Venezuela se bloquea?»</h4><p>El stock de ocho semanas compra tiempo, no resuelve el riesgo. La continuidad exige un contrato de suministro alternativo y etiquetado de origen inequívoco; hasta entonces, la contingencia colombiana es una condición por cerrar.</p></div>
+    <div class="card"><h4>«¿Por qué vosotros?»</h4><p>La combinación de origen, importación UE y capacidad de tueste puede formar una ventaja estructural si contratos, calidad, costes y trazabilidad superan due diligence. Hoy es una tesis verificable, no un moat probado.</p></div>
+    <div class="card"><h4>«¿Cuándo recupero?»</h4><p>En el caso base, el payback simple es ~30 meses con caja de lanzamiento y ~40 meses con Opex normalizado. El cash payback real exige un modelo mensual con rampa, circulante, impuestos y financiación.</p></div>
+  </div>
+</div></section>
+
+<!-- ================= CIERRE EJECUTIVO ================= -->
+<section class="decision-section" id="cierre" data-chapter="11" data-nav="Decisión"><div class="wrap">
+  <div class="sec-kicker">11 · Decisión de inversión</div>
+  <h2>Cierre ejecutivo</h2>
+  <p class="lead">El proyecto es atractivo por su integración de origen, activo productivo y canales de margen, pero todavía necesita convertir contratos, licencias y demanda en evidencia verificable.</p>
+  <div class="decision-columns">
+    <div class="decision-column">
+      <h3>Tres riesgos principales</h3>
+      <div class="decision-item"><span>01</span><div><b>Licencia, extracción y seguridad</b><p>La nave y cualquier acceso de público son un no-go hasta acreditar compatibilidad urbanística, emisiones, incendios, ventilación y encaje sanitario. <b>Recomendación:</b> contrato condicionado y validación técnica independiente antes de capex.</p></div></div>
+      <div class="decision-item"><span>02</span><div><b>Suministro, JV y trazabilidad</b><p>Origen, calidad, precio de transferencia, continuidad logística y blockchain son capacidades declaradas, no todavía probadas. <b>Recomendación:</b> contrato marco, certificados por lote, SLA y contingencia de suministro en el data room.</p></div></div>
+      <div class="decision-item"><span>03</span><div><b>Rampa comercial insuficiente</b><p>El caso conservador no cubre el Opex normalizado y una P12 infrautilizada destruye retorno. <b>Recomendación:</b> preventa, cartas B2B y capital por hitos; congelar Fase 3 si no se sostienen 18 k€/mes.</p></div></div>
+    </div>
+    <div class="decision-column">
+      <h3>Tres oportunidades de alta rentabilidad</h3>
+      <div class="decision-item"><span>01</span><div><b>Margen vertical por canal</b><p>El modelo estima 76% de margen en bolsa retail y 57% en kg B2B gracias a origen directo y tueste propio. La rentabilidad aumenta si precio, calidad y coste landed se validan.</p></div></div>
+      <div class="decision-item"><span>02</span><div><b>Apalancamiento del activo productivo</b><p>B2B, marca blanca, e-commerce y suscripción comparten la P12 y la misma infraestructura; cada kilo incremental por encima del break-even absorbe costes fijos con poca inversión adicional.</p></div></div>
+      <div class="decision-item"><span>03</span><div><b>Opción de marca sin capex prematuro</b><p>El taproom prueba conversión y experiencia; el showroom con KB90 solo se activa tras el gate. Esta secuencia conserva la opción de réplica geográfica sin financiar primero el activo más arriesgado.</p></div></div>
+    </div>
+  </div>
+  <div class="verdict-panel">
+    <strong>Recomendación global: invertir con condiciones.</strong>
+    <p>Aprobar un primer tramo de 15.000 € para due diligence, local, licencias, ofertas vinculantes y preventa; no liberar el resto de Fase 1 hasta cumplir esos gates. Fase 2 exige licencia validada y tracción comercial; Fase 3 solo se activa con ventas ≥ 18.000 €/mes durante tres meses y margen bruto ≥ 60%. En el formato actual no se recomienda desembolsar de una vez los 241.690 €.</p>
+  </div>
+</div></section>
+
+<!-- ================= FUENTES ================= -->
+<section id="fuentes" data-chapter="12" data-nav="Fuentes"><div class="wrap">
+  <div class="sec-kicker">12 · Fuentes y anexos</div>
+  <h2>Fuentes, supuestos y data room</h2>
+  <div class="grid2">
+    <div>
+      <h3>Fuentes consultadas</h3>
+      <p class="src">
+        · <b>CCM:</b> datos aportados por el promotor — 420+ familias, puntuaciones, capacidad, exportaciones y trazabilidad pendientes de evidencia documental<br>
+        · <a href="https://www.biomesadelsur.com/">Grupo Biomesa / Biomesa Ibérica</a> — fuente corporativa sobre intermediación, contratos y trazabilidad; requiere verificación jurídica y operativa independiente<br>
+        · <a href="https://laguashira.com/blogs/origen/cafe-de-especialidad-en-alicante">La Guashira Specialty Coffee</a> — benchmark observable de finca, tueste en España y canales; no valida los economics de MERIDIANO<br>
+        · <a href="https://www.probat.com/products/specialty-coffee/p-series/">PROBAT P Series — ficha oficial</a> · <a href="https://www.probat.com/fileadmin/content/presse/downloads/Brochures/Shop%20Roaster/p-serie/Product_Brochure_P_series_en.pdf">folleto técnico oficial</a> — rango, capacidad, configuraciones y transferencia de recetas con ajustes<br>
+        · <a href="https://www.lamarzocco.com/es/es/productos-comerciales/maquinas-de-espresso/kb90/">La Marzocco KB90</a> · <a href="https://www.mahlkoenig.com/products/e65s-gbw">Mahlkönig E65S GbW</a> — referencias oficiales de la maquinaria visualizada; compra sujeta a oferta y servicio en España<br>
+        · <a href="https://www.archdaily.com/984638/cuervo-coffee-roasters-mutar">Cuervo Coffee Roasters / Mutar</a> · <a href="https://www.archdaily.com/1006768/bosgaurus-coffee-roasters-nu-architecture-and-design">Bosgaurus Coffee Roasters / NU</a> — referencias visuales de arquitectura, no evidencia económica<br>
+        · Dossier interno ACTIVO_01–06 (v1.0, 2026-07-12) — base normativa, capex/opex histórico y plan de interiorismo<br>
+      </p>
+      <p class="source-caveat"><b>Jerarquía de evidencia:</b> una web corporativa acredita lo que una entidad declara, no que la capacidad, el contrato o el rendimiento estén probados. Las decisiones de capital se apoyarán en documentos del data room, ofertas vinculantes y validación técnica independiente.</p>
+      <h3>Convención de etiquetado</h3>
+      <p class="src"><span class="tag t-hecho">HECHO</span> dato verificado en fuente · <span class="tag t-supuesto">SUPUESTO</span> criterio de modelización con driver explícito · <span class="tag t-condicion">CONDICIÓN</span> requisito previo sin el cual no ejecutar.</p>
+    </div>
+    <div>
+      <h3>Checklist data room (para due diligence)</h3>
+      <p class="src">
+        01 · Pacto de socios JV y cap table &nbsp;02 · Contrato marco de suministro CCM→JV con fórmula de precio &nbsp;03 · Informe compatibilidad urbanística de la nave &nbsp;04 · Oferta y contrato PROBAT (nueva o usada certificada) &nbsp;05 · Proyecto técnico de instalación y extracción &nbsp;06 · Plan APPCC y registro sanitario &nbsp;07 · Registro de marca OEPM/EUIPO &nbsp;08 · Modelo financiero editable (36 meses, 3 escenarios) &nbsp;09 · Cartas de intención B2B y marca blanca &nbsp;10 · Pólizas de seguro (transporte, RC producto, avería maquinaria) &nbsp;11 · Certificados de cata SCA de lotes CCM &nbsp;12 · Acuerdo de trazabilidad blockchain Biomesa (SLA)
+      </p>
+      <div class="note">Siguiente entregable sugerido: modelo financiero editable en Excel (36 meses, por canal, con las palancas de esta memoria) y las 20 preguntas duras de inversor con respuesta desarrollada.</div>
+    </div>
+  </div>
+</div></section>
+
+</main>
+
+<footer><div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center">
+  <div><span class="serif" style="color:var(--laton);font-size:16px;letter-spacing:.18em">MERIDIANO</span> · Joint Venture CCM × Grupo Biomesa · A Coruña<br>Dossier maestro v1.2 · 13 julio 2026 · Confidencial — no constituye oferta de valores ni asesoramiento de inversión.</div>
+  <div class="mono" style="font-size:10px;color:var(--laton)">8°35'N — 43°22'N</div>
+</div></footer>
+
+<script>
+(function(){
+  'use strict';
+
+  var euro = new Intl.NumberFormat('es-ES', {maximumFractionDigits: 0});
+  var progress = document.getElementById('readingProgress');
+  var progressQueued = false;
+
+  function updateProgress(){
+    var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    var ratio = maxScroll > 0 ? Math.min(1, Math.max(0, window.scrollY / maxScroll)) : 0;
+    progress.style.transform = 'scaleX(' + ratio + ')';
+    progressQueued = false;
+  }
+
+  window.addEventListener('scroll', function(){
+    if (!progressQueued) {
+      progressQueued = true;
+      window.requestAnimationFrame(updateProgress);
+    }
+  }, {passive: true});
+  window.addEventListener('resize', updateProgress);
+  updateProgress();
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var mobileNav = document.getElementById('mobileNav');
+
+  function goToTarget(selector){
+    var target = document.querySelector(selector);
+    if (!target) return;
+    var targetY = target.getBoundingClientRect().top + window.scrollY - 64;
+    window.scrollTo({top: targetY, behavior: reduceMotion.matches ? 'auto' : 'smooth'});
+    window.history.replaceState(null, '', selector);
+  }
+
+  mobileNav.addEventListener('change', function(){
+    goToTarget(mobileNav.value);
+  });
+
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('nav a[href^="#"]:not(.brand)'));
+  var trackedSections = Array.prototype.slice.call(document.querySelectorAll('section[data-nav]'));
+
+  function setActiveSection(section){
+    var selector = '#' + section.id;
+    navLinks.forEach(function(link){
+      if (link.getAttribute('href') === selector) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+    if (mobileNav.querySelector('option[value="' + selector + '"]')) mobileNav.value = selector;
+  }
+
+  if ('IntersectionObserver' in window) {
+    var activeObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) setActiveSection(entry.target);
+      });
+    }, {rootMargin: '-24% 0px -64% 0px', threshold: 0});
+    trackedSections.forEach(function(section){ activeObserver.observe(section); });
+  } else if (trackedSections.length) {
+    setActiveSection(trackedSections[0]);
+  }
+
+  var revealTargets = Array.prototype.slice.call(document.querySelectorAll('section > .wrap, .capital-route > .wrap'));
+  revealTargets.forEach(function(target){ target.classList.add('chapter-reveal'); });
+
+  if (!reduceMotion.matches && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('motion-ready');
+    var revealObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      });
+    }, {rootMargin: '0px 0px -10% 0px', threshold: 0.01});
+    revealTargets.forEach(function(target){ revealObserver.observe(target); });
+  } else {
+    revealTargets.forEach(function(target){ target.classList.add('is-visible'); });
+  }
+
+  Array.prototype.slice.call(document.querySelectorAll('details')).forEach(function(panel){
+    var summary = panel.querySelector('summary');
+    if (!summary) return;
+    summary.setAttribute('aria-expanded', panel.open ? 'true' : 'false');
+    panel.addEventListener('toggle', function(){
+      summary.setAttribute('aria-expanded', panel.open ? 'true' : 'false');
+    });
+  });
+
+  var salesRange = document.getElementById('salesRange');
+  var marginRange = document.getElementById('marginRange');
+  var salesOutput = document.getElementById('salesOutput');
+  var marginOutput = document.getElementById('marginOutput');
+  var ebitdaOutput = document.getElementById('simEbitda');
+  var breakEvenOutput = document.getElementById('simBreakEven');
+  var paybackOutput = document.getElementById('simPayback');
+  var statusOutput = document.getElementById('simStatus');
+  var modeButtons = Array.prototype.slice.call(document.querySelectorAll('[data-opex]'));
+  var activeOpex = 11500;
+  var productiveCapex = 210890;
+
+  function setStatus(message, tone){
+    statusOutput.textContent = message;
+    statusOutput.setAttribute('data-tone', tone);
+  }
+
+  function updateSimulator(){
+    var sales = Number(salesRange.value);
+    var marginPercent = Number(marginRange.value);
+    var margin = marginPercent / 100;
+    var ebitda = (sales * margin) - activeOpex;
+    var breakEven = activeOpex / margin;
+    var payback = ebitda > 0 ? Math.ceil(productiveCapex / ebitda) : null;
+
+    salesOutput.textContent = euro.format(sales) + ' €';
+    marginOutput.textContent = marginPercent + '%';
+    ebitdaOutput.textContent = euro.format(Math.round(ebitda)) + ' €';
+    breakEvenOutput.textContent = euro.format(Math.round(breakEven)) + ' €';
+    paybackOutput.textContent = payback ? payback + ' meses' : 'No repaga';
+
+    if (ebitda <= 0) {
+      setStatus('No viable con estos supuestos: el margen no cubre el Opex seleccionado.', 'bad');
+    } else if (sales < 18000 || marginPercent < 60) {
+      setStatus('Por debajo del gate inversor: valide precio, mix y recurrencia antes de escalar.', 'bad');
+    } else if (payback > 48) {
+      setStatus('EBITDA positivo, pero el retorno supera 48 meses y sigue siendo frágil para capital riesgo.', 'warn');
+    } else if (payback <= 30) {
+      setStatus('Escenario atractivo: retorno simple de 30 meses o menos, sujeto a rampa y caja real.', 'good');
+    } else {
+      setStatus('Caso defendible: supera el gate, aunque exige disciplina comercial y control de Opex.', 'warn');
+    }
+  }
+
+  salesRange.addEventListener('input', updateSimulator);
+  marginRange.addEventListener('input', updateSimulator);
+  modeButtons.forEach(function(button){
+    button.addEventListener('click', function(){
+      activeOpex = Number(button.getAttribute('data-opex'));
+      modeButtons.forEach(function(item){
+        item.setAttribute('aria-pressed', item === button ? 'true' : 'false');
+      });
+      updateSimulator();
+    });
+  });
+  updateSimulator();
+})();
+</script>
+
+</body>
+</html>
